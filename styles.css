@@ -1,0 +1,96 @@
+:root{
+    --gapcolour : rgb(254, 255, 167);
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: rgb(255,228,196);
+}
+*{
+    box-sizing: border-box;
+}
+.container{
+    display:flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+@keyframes pulse{
+    50%{transform: translateY(-10px);}
+}
+.container>h1{
+    padding: 0;
+    margin: 0;
+    font-size:40px;
+    animation: pulse;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.container>h2{
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+}
+.game{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    background-color: rgb(209, 97, 97);
+    height: 450px;
+    width:450px;
+    border-radius: 10%;
+}
+.box{
+    width: 150px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 5rem;
+}
+.box#n0, .box#n1, .box#n2{
+    border-bottom: 5px solid var(--gapcolour);
+}
+.box#n0, .box#n3, .box#n6{
+    border-right: 5px solid var(--gapcolour);
+}
+.box#n2, .box#n5, .box#n8{
+    border-left: 5px solid var(--gapcolour);
+}
+.box#n6, .box#n7, .box#n8{
+    border-top: 5px solid var(--gapcolour);
+}
+.box:hover{
+    background-color:rgb(226, 235, 172);
+    cursor:pointer;
+}
+.box:focus{
+    background-color:rgb(209, 97, 97);
+    cursor:initial;
+}
+.box:visited{
+    background-color:rgb(209, 97, 97);
+    cursor:initial;
+}
+.container button{
+    width:16ch;
+    height:3ch;
+    margin-top:1em;
+    background-color:rgb(99, 56, 56);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:antiquewhite;
+    font-size:1.5rem;
+    border-style:none;
+    transition:100ms;
+}
+.container button:hover{
+    /*transform:translateY(-5px);
+    width:17ch;
+    height:4ch;*/
+    transform:scale(1.1);
+    cursor:pointer;
+}
